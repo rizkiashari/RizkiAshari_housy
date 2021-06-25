@@ -1,38 +1,141 @@
-.App {
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
+}
+a{
+  text-decoration: none;
+}
+/* Header */
+.logoNav {
+  width: 100px;
+  height: 50px;
+}
+.iconSearch{
+  width: 25px;
+  height: 26px;
+  padding: 2px;
+  outline: none;
+}
+.font-bold{
+  font-weight: bold;
+}
+.h3{
+  font-size: 18px !important;
+}
+.text-group, .text-pet, .text-shared{
+  background-color: #fff;
+  border: none;
+  font-size: 12px;
+}
+.text-group{
+  margin-right: 120px;
+}
+.text-pet{
+  margin-right: 105px;
+}
+.text-shared{
+  margin-right: 50px;
+}
+.selectedBtn{
+  background: #5A57AB;
+  color: #fff;
+}
+.btn{
+  margin-right: 14px;
+}
+.h4{
+  font-size: 12px;
+  color: #929292;
+}
+.label{
+  font-weight: 700;
+  font-size: 12px;
+}
+.marginCustom{
+  margin-left: 5px;
+  width: 170px;
+  height: 30px;
+}
+.applyBtn{
+  background: #5A57AB;
+  color: #fff;
+  margin-left: 155px;
+  margin-top: 10px;
+  width: 100px;
+}
+.date{
+  padding-right: 20px;
+}
+.bg-date{
+  background: #C2C2C2;
+  border: none;
+}
+.btnWhite{
+  background: #ffffff;
+  color: #000000;
+  border: none;
+}
+.title-Sign{
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.submitBtn{
+  width: 100%;
+}
+.formCustom{
+  padding: 15px 40px;
+}
+.customP{
+  font-size: 12px;
   text-align: center;
+  margin-top: 15px;
+  margin-bottom: -5px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.customBgCard{
+  background-color: #F9F9F9;
+  margin-left: -70px;
+  width: 100%;
+  padding: 20px 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.CardCustom{
+  cursor: pointer;
+  margin-left: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.amenities{
+  position: absolute;
+  font-size: 10px;
+  background-color: #ffffff;
+  margin: 20px 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
-
-.App-link {
-  color: #61dafb;
+.fontCustom{
+  font-size: 9px;
+  font-weight: bold;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.customTitle{
+  font-size: 13px;
+  margin: -8px 0;
+}
+.lokasiCustom{
+  font-size: 10px;
+  margin-bottom: -20px;
+  color: #A8A8A8;
+}
+.homeCustom{
+  overflow-x: hidden;
+}
+.searchCustom{
+  background-color: #C4C4C4;
+  padding: 4px 0;
+  border-radius: 5px;
+}
+@media screen and (max-width:900px) {
+  .inputGroup{
+    margin: 0;
+    width: 100%;
   }
 }
