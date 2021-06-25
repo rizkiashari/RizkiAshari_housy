@@ -1,15 +1,15 @@
 import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
 
-import Logo from "../assets/logoIcon/Icon.png";
-import searchLogo from "../assets/logoIcon/search-icon.png";
+import Logo from "../../assets/logoIcon/Icon.png";
+import searchLogo from "../../assets/logoIcon/search-icon.png";
 
-import ModalSignIn from "./signinModal";
-import ModalSignUp from "./signupModal";
+import ModalSignIn from "../signinModal";
+import ModalSignUp from "../signupModal";
 
-import data from "../data/fakeData";
+import data from "../../data/fakeData";
 
-import "../App.css";
+import "../../App.css";
 
 import { Nav, Navbar, FormControl, Button, Image, Form } from "react-bootstrap";
 
@@ -44,15 +44,17 @@ const Header = () => {
           <FormControl
             type="search"
             className="searchCustom"
+            autoComplete="off"
             placeholder="Search"
-            style={{ width: "300px", height: "40px", border: 0 }}
+            style={{ width: "300px", height: "25px", border: 0 }}
             aria-label="Search"
             name="search"
             onChange={handleChange}
             value={search}
           />
           <Button
-            variant="outline-success"
+            variant="outline"
+            className="btnSearch"
             onClick={handleSubmit}
             style={{ border: 0 }}
             id="search-button"

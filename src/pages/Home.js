@@ -2,7 +2,7 @@ import { Row, Col } from "react-bootstrap";
 
 import Sidebar from "../component/Sidebar";
 import CardList from "../component/CardList";
-import Header from "../component/Header";
+import Header from "../component/Navbar/Header";
 
 const Home = () => {
   return (

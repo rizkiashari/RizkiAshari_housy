@@ -1,6 +1,9 @@
 import "../App.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 import LogoDate from "../assets/logoIcon/calendarIcon.png";
+import polyDate from "../assets/logoIcon/datePolygon.png";
+import DatePicker from "react-datepicker";
 
 import {
   InputGroup,
@@ -10,21 +13,44 @@ import {
   Col,
   Container,
   FormControl,
-  ButtonGroup,
   ToggleButton,
 } from "react-bootstrap";
 import { useState } from "react";
 
 const Sidebar = () => {
   const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState("1");
-
-  const radios = [
-    { name: "day", value: "1" },
-    { name: "month", value: "2" },
-    { name: "year", value: "3" },
+  const [startDate, setStartDate] = useState();
+  // Type Of Rent
+  const [type, setTypeOfRent] = useState("year");
+  const typeOfRents = [
+    { name: "Day", value: "day" },
+    { name: "Month", value: "month" },
+    { name: "Year", value: "year" },
   ];
 
+  // console.log(type);
+
+  // Property BedRoom
+  const [bedroom, setBedroom] = useState("3");
+  const bedrooms = [
+    { name: "1", value: "1" },
+    { name: "2", value: "2" },
+    { name: "3", value: "3" },
+    { name: "4", value: "4" },
+    { name: "5+", value: "5" },
+  ];
+
+  // Property BathRoom
+  const [bathroom, setBathroom] = useState("2");
+  const bathrooms = [
+    { name: "1", value: "1" },
+    { name: "2", value: "2" },
+    { name: "3", value: "3" },
+    { name: "4", value: "4" },
+    { name: "5+", value: "5" },
+  ];
+  console.log("bath", bathroom);
+  console.log("bed", bedroom);
   return (
     <Container className="container ml-3">
       <Row>
@@ -33,22 +59,20 @@ const Sidebar = () => {
             <h3 className="h3 mb-2">Type of Rent</h3>
           </Col>
           <Col>
-            <ButtonGroup className="mb-2">
-              {radios.map((radio, idx) => (
-                <ToggleButton
-                  key={idx}
-                  id={`radio-${idx}`}
-                  type="radio"
-                  variant="secondary"
-                  name="radio"
-                  value={radio.value}
-                  checked={radioValue === radio.value}
-                  onChange={(e) => setRadioValue(e.currentTarget.value)}
-                >
-                  {radio.name}
-                </ToggleButton>
-              ))}
-            </ButtonGroup>
+            {typeOfRents.map((typeOfRent, key) => (
+              <ToggleButton
+                key={key}
+                id={`radio-${key}`}
+                type="radio"
+                className="radioButton2 typeOfRent mr-4"
+                name="radio"
+                value={typeOfRent.value}
+                checked={type === typeOfRent.value}
+                onChange={(e) => setTypeOfRent(e.currentTarget.value)}
+              >
+                {typeOfRent.name}
+              </ToggleButton>
+            ))}
           </Col>
         </Col>
       </Row>
@@ -59,15 +83,15 @@ const Sidebar = () => {
           </Col>
           <Col>
             <InputGroup className="mb-3 date">
-              <InputGroup.Text id="basic-addon1">
-                <Image src={LogoDate} />
-              </InputGroup.Text>
-              <FormControl
-                style={{ maxWidth: "200px" }}
-                type="date"
-                aria-label="date"
-                aria-describedby="date"
+              <img src={LogoDate} alt="Logo" />
+              <div className="lineDate"></div>
+              <DatePicker
+                className="pickerDate"
+                placeholderText="Select Date"
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
               />
+              <img src={polyDate} alt="datapoly" className="datePoly" />
             </InputGroup>
           </Col>
         </Col>
@@ -81,41 +105,39 @@ const Sidebar = () => {
             <h4 className="h4 mb-2">Bedroom</h4>
           </Col>
           <Col>
-            <Button value="1" className="btn btn-light">
-              1
-            </Button>
-            <Button value="2" className="btn btn-light">
-              2
-            </Button>
-            <Button value="3" className="btn selectedBtn">
-              3
-            </Button>
-            <Button value="4" className="btn btn-light">
-              4
-            </Button>
-            <Button value="5" className="btn btn-light">
-              5+
-            </Button>
+            {bedrooms.map((bedrm, key) => (
+              <ToggleButton
+                key={key}
+                id={`radio-${key}`}
+                type="radio"
+                className="radioButton2 propertyRoomBtn mr-3"
+                name="bedroom"
+                value={bedrm.value}
+                checked={bedroom === bedrm.value}
+                onChange={(e) => setBedroom(e.currentTarget.value)}
+              >
+                {bedrm.name}
+              </ToggleButton>
+            ))}
           </Col>
           <Col>
             <h4 className="h4">Bathroom</h4>
           </Col>
           <Col>
-            <Button value="1" className="btn btn-light">
-              1
-            </Button>
-            <Button value="2" className="btn btn-light">
-              2
-            </Button>
-            <Button value="3" className="btn selectedBtn">
-              3
-            </Button>
-            <Button value="4" className="btn btn-light">
-              4
-            </Button>
-            <Button value="5" className="btn btn-light">
-              5+
-            </Button>
+            {bathrooms.map((bathrm, key) => (
+              <ToggleButton
+                key={key}
+                id={`radios-${key}`}
+                type="radio"
+                className="radioButton2 propertyRoomBtn mr-3"
+                name="bathroom"
+                value={bathrm.value}
+                checked={bathroom === bathrm.value}
+                onChange={(e) => setBathroom(e.currentTarget.value)}
+              >
+                {bathrm.name}
+              </ToggleButton>
+            ))}
           </Col>
         </Col>
       </Row>
@@ -127,7 +149,10 @@ const Sidebar = () => {
           <Col>
             <InputGroup className="mb-3">
               <InputGroup.Text className="text-group">Funished</InputGroup.Text>
-              <InputGroup.Checkbox aria-label="Checkbox" />
+              <InputGroup.Checkbox
+                className="bgCheckbox"
+                aria-label="Checkbox"
+              />
             </InputGroup>
             <InputGroup className="mb-3">
               <InputGroup.Text className="text-pet">
