@@ -1,18 +1,16 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// Component
+import Content from "./component/Content/Content";
+import Header from "./component/Navbar/Header";
+import Sidebar from "./component/Sidebar/Sidebar";
 
-import Home from "./pages/Home";
-import signinModal from "./component/signinModal";
-import signupModal from "./component/signupModal";
 const App = () => {
   return (
     <div>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/signin" component={signinModal} />
-          <Route exact path="/signup" component={signupModal} />
-        </Switch>
-      </Router>
+      <Header />
+      <div>
+        <Sidebar />
+        <Content />
+      </div>
     </div>
   );
 };

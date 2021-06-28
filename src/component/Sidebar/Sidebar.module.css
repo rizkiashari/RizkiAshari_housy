@@ -1,0 +1,197 @@
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 400px;
+  height: 200px;
+  padding: 0px 30px 0 38px;
+}
+.Rent{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 105px;
+  margin-bottom: 5px;
+}
+.titleRents{
+  width: 100%;
+  font-size: 18px;
+  font-weight: 800;
+}
+.RentOption {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.rentOption{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 35px;
+  border-radius: 5px;
+  background: #D2D2D2;
+}
+.rentRadio{
+  display: none;
+}
+.titleRent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  font-weight: 800;
+}
+.titleRent:hover{
+  background-color: #5A57AB;
+  color: #ffffff;
+  cursor: pointer;
+}
+.dateContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 5px;
+}
+.dateTitle {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 800;
+}
+.roomTitle{
+  font-size: 18px;
+  font-weight: 800;
+}
+.roomSubTitle{
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 19px;
+  color: #D2D2D2;
+  margin-bottom: 10px;
+}
+.roomOptions{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.roomOption{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 35px;
+  border-radius: 5px;
+  background: #D2D2D2;
+  margin-bottom: 10px;
+}
+.roomRadio{
+  display: none;
+}
+.titleRoom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: 800;
+}
+.titleRoom:hover {
+  background-color: #5a57ab;
+  color: white;
+  cursor: pointer;
+}
+.amenitiesTitle {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.amenitiesOption {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+.amenitiesLabel {
+  font-size: 14px;
+  color: #929292;
+}
+.amenitiesCheckBox {
+  width: 12px;
+  height: 12px;
+  border-radius: 5px;
+  border: 1px solid #D2D2D2;
+  outline: none;
+}
+.amenitiesCheckBox:hover {
+  cursor: pointer;
+}
+.amenitiesCheckBox:checked {
+  color: #5a57ab;
+}
+.budgetTitle {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.budgetForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.budgetForm > input {
+  -webkit-appearance: none;
+  width: 237px;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+  background: #D2D2D2;
+  border: none;
+  border-radius: 5px;
+}
+.budgetForm > input:focus{
+  outline: none;
+}
+.budgetForm > span{
+  font-size: 14px;
+}
+.apply {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.applyButton {
+  font-size: 12px;
+  color: white;
+  font-weight: 900;
+  width: 70px;
+  height: 30px;
+  background-color: #5a57ab;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 10px;
+}
+.applyButton:hover {
+  background-color: #5A57AB;
+  cursor: pointer;
+}

@@ -1,0 +1,58 @@
+.houseCard {
+  position: relative;
+
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: column;
+
+  text-align: left;
+
+  width: 290px;
+  height: 240px;
+
+  border: 3px solid rgba(196, 196, 196, 0.25);
+  border-radius: 5px;
+  padding: 10px 9px 0px 9px;
+  margin-bottom: 35px;
+  transition: 300ms;
+}
+
+.houseCard:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.houseImg {
+  margin-bottom: 10px;
+}
+
+.housePrice {
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.houseSpec {
+  font-size: 9px;
+  font-weight: 900;
+  margin-bottom: 3px;
+}
+
+.houseAddress {
+  font-size: 9px;
+  font-weight: 900;
+  color: #a8a8a8;
+}
+
+.amenities {
+  position: absolute;
+  left: 17px;
+  top: 16px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: calc(100% - 34px);
+}

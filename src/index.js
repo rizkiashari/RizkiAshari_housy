@@ -1,15 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from "./pages/Home/Home.jsx";
 
-import App from './App';
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home isLogged={true} />
+        </Route>
+        <Route exact path="/guest">
+          <Home isLogged={false} />
+        </Route>
+      </Switch>
+    </Router>
   </React.StrictMode>,
-  document.getElementById('index')
+  document.getElementById("index")
 );
 
 // If you want to start measuring performance in your app, pass a function
