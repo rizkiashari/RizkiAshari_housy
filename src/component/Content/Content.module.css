@@ -1,4 +1,7 @@
 .content {
-  display: flex;
-  margin-left: 50%;
+  /* display: flex;
+  margin-left: 50%; */
+}
+.notFound{
+  text-align: center;
 }

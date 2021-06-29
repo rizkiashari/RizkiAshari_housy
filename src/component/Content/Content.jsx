@@ -35,7 +35,7 @@ const Content = ({houseList, houseRent}) => {
     );
   } else {
     return (
-      <NotFound/>
+      <NotFound className={styles.notFound}/>
     );
   }
 };

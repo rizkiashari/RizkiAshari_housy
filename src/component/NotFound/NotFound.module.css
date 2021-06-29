@@ -1,6 +1,11 @@
 .Center{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  /* margin-left: 100px; */
+}
+.Images{
+  width: 400px;
 }
