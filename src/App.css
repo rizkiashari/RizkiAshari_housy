@@ -18,6 +18,9 @@ a{
   border: none;
   font-size: 12px;
 }
+.radioButton2 input[type="radio"]{
+  display: none;
+}
 .text-group{
   margin-right: 120px;
 }
@@ -51,11 +54,23 @@ a{
   width: 100px;
 }
 .date{
-  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #C2C2C2;
+  width: 60%;
+  border-radius: 5px;
+  padding: 7px 10px;
 }
 .bg-date{
   background: #C2C2C2;
   border: none;
+}
+.pickerDate{
+  background-color: #C2C2C2;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  padding: 0 12px;
 }
 .btnWhite{
   background: #ffffff;
@@ -115,8 +130,65 @@ a{
 }
 .searchCustom{
   background-color: #C4C4C4;
+<<<<<<< HEAD
   padding: 0 2px;
+=======
+  padding-left: 10px;
+>>>>>>> 1a929b9932f458abccf2d4a1ba581719e170837d
   border-radius: 5px;
+  align-self: center;
+  border: none !important;
+}
+.searchCustom:focus{
+  background-color: #C2C2C2 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+.typeOfRent, .propertyRoomBtn{
+  background-color: #C2C2C2;
+  border: none;
+}
+.typeOfRent:hover, .propertyRoomBtn:hover{
+  background-color: #C2C2C2;
+}
+.typeOfRent.active{
+  background-color: #5A57AB !important;
+  color: #ffffff !important;
+  border: none;
+}
+.propertyRoomBtn.active{
+  background-color: #5A57AB !important;
+  color: #ffffff !important;
+  border: none;
+}
+.btnSearch{
+  background-color: #C2C2C2;
+}
+.btnSearch:hover, .btnSearch:active{
+  background-color: #C2C2C2;
+}
+.btnSearch:focus{
+  background-color: #C2C2C2;
+  box-shadow: none;
+}
+.input-group-text{
+  background-color: #fff;
+  border: none;
+}
+.bgCheckbox{
+  background-color: transparent !important;
+}
+.lineDate{
+  width:2px;
+  background-color: #A8A8A8;
+  height: 30px;
+  margin-left: 7px;
+}
+.datePoly{
+  height: 20px;
+  position: absolute;
+  left: 80%;
+  margin-top: 4px;
 }
 @media screen and (max-width:900px) {
   .inputGroup{
