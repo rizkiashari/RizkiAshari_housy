@@ -8,11 +8,9 @@ import DatePicker from "react-datepicker";
 import {
   InputGroup,
   Button,
-  Image,
   Row,
   Col,
   Container,
-  FormControl,
   ToggleButton,
 } from "react-bootstrap";
 import { useState } from "react";
@@ -27,8 +25,12 @@ const Sidebar = () => {
     { name: "Month", value: "month" },
     { name: "Year", value: "year" },
   ];
-
-  // console.log(type);
+  const [aminities, setAminities] = useState("");
+  const aminitiesType = [
+    { name: "Pet Allowed", value: "Pet Allowed" },
+    { name: "Furnished", value: "Furnished" },
+    { name: "Shared Accomodation", value: "Shared Accomodation" },
+  ];
 
   // Property BedRoom
   const [bedroom, setBedroom] = useState("3");
@@ -49,16 +51,14 @@ const Sidebar = () => {
     { name: "4", value: "4" },
     { name: "5+", value: "5" },
   ];
-  console.log("bath", bathroom);
-  console.log("bed", bedroom);
   return (
-    <Container className="container ml-3">
+    <Container className="container ml-3 fixed">
       <Row>
         <Col>
           <Col>
             <h3 className="h3 mb-2">Type of Rent</h3>
           </Col>
-          <Col>
+          <Col className="type">
             {typeOfRents.map((typeOfRent, key) => (
               <ToggleButton
                 key={key}
@@ -147,25 +147,19 @@ const Sidebar = () => {
             <h3 className="h3">Amenities</h3>
           </Col>
           <Col>
-            <InputGroup className="mb-3">
-              <InputGroup.Text className="text-group">Funished</InputGroup.Text>
-              <InputGroup.Checkbox
-                className="bgCheckbox"
-                aria-label="Checkbox"
-              />
-            </InputGroup>
-            <InputGroup className="mb-3">
-              <InputGroup.Text className="text-pet">
-                Pet Allowed
-              </InputGroup.Text>
-              <InputGroup.Checkbox aria-label="Checkbox" />
-            </InputGroup>
-            <InputGroup className="mb-3">
-              <InputGroup.Text className="text-shared">
-                Shared Accomodation
-              </InputGroup.Text>
-              <InputGroup.Checkbox aria-label="Checkbox" />
-            </InputGroup>
+            {aminitiesType.map((aminity, key) => (
+              <div class="aminityContainer">
+                <label class="aminityLabel">{aminity.value}</label>
+                <input
+                  key={key}
+                  class=""
+                  type="checkbox"
+                  value={aminity.value}
+                  id={aminity.value}
+                  onChange={(e) => setAminities(e.currentTarget.value)}
+                />
+              </div>
+            ))}
           </Col>
         </Col>
       </Row>

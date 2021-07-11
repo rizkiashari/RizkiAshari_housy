@@ -4,14 +4,14 @@ import { Link, useHistory } from "react-router-dom";
 
 import { Form, Button, Modal } from "react-bootstrap";
 
-const signupModal = (props) => {
+const SignupModal = (props) => {
   const { handleClose, showSignUp } = props;
   return (
     <Modal show={showSignUp} onHide={handleClose} className="">
       <h2 className="title-Sign mx-auto">Sign Up</h2>
       <div className="p-10 formCustom">
         <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Full Name</Form.Label>
             <Form.Control type="text" />
           </Form.Group>
@@ -40,4 +40,4 @@ const signupModal = (props) => {
   );
 };
 
-export default signupModal;
+export default SignupModal;

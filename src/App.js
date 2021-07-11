@@ -1,19 +1,28 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import { UserContextProvider } from "./contexts/userContext";
 import Home from "./pages/Home";
-import signinModal from "./component/signinModal";
-import signupModal from "./component/signupModal";
+import SignupModal from "./component/signupModal";
+import DetailProduct from "./component/Product/detailProduct";
+import Header from "./component/Navbar/Header";
+import Profile from "./component/profile/Profile";
+import Booking from "./component/Booking/Booking";
+import History from "./component/History/History";
 const App = () => {
   return (
-    <div>
-      <Router>
+    <Router>
+      <UserContextProvider>
+        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/signin" component={signinModal} />
-          <Route exact path="/signup" component={signupModal} />
+          <Route exact path="/roomList" component={DetailProduct} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/booking" component={Booking} />
+          <Route exact path="/history" component={History} />
+          <Route exact path="/signup" component={SignupModal} />
         </Switch>
-      </Router>
-    </div>
+      </UserContextProvider>
+    </Router>
   );
 };
 

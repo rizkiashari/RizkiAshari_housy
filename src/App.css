@@ -66,8 +66,8 @@ a{
 .date{
   display: flex;
   align-items: center;
-  background-color: #C2C2C2;
-  width: 60%;
+  background-color: #e6e6e6;
+  width: 25%;
   border-radius: 5px;
   padding: 7px 10px;
 }
@@ -76,7 +76,7 @@ a{
   border: none;
 }
 .pickerDate{
-  background-color: #C2C2C2;
+  background-color: #e6e6e6;
   border: none;
   outline: 0;
   cursor: pointer;
@@ -91,6 +91,12 @@ a{
   font-size: 24px;
   font-weight: bold;
   margin: 10px 0;
+}
+.fixed{
+  position: fixed;
+}
+.fixed-1{
+  position: relative;
 }
 .submitBtn{
   width: 100%;
@@ -110,9 +116,15 @@ a{
   width: 100%;
   padding: 20px 0;
 }
+.cardContainer{
+  width: 100%;
+  
+}
 .CardCustom{
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 5px;
+  width: 100%;
+  
 }
 .amenities{
   position: absolute;
@@ -137,22 +149,24 @@ a{
 }
 .homeCustom{
   overflow-x: hidden;
+  margin-top: 100px;
 }
 .searchCustom{
-  background-color: #C4C4C4;
+  background-color: #e6e6e6;
   padding-left: 10px;
   border-radius: 5px;
   align-self: center;
   border: none !important;
 }
 .searchCustom:focus{
-  background-color: #C2C2C2 !important;
+  background-color: #e6e6e6 !important;
   outline: 0 !important;
   box-shadow: none !important;
 }
 .typeOfRent, .propertyRoomBtn{
-  background-color: #C2C2C2;
+  background-color: #e6e6e6;
   border: none;
+  color: #000000;
 }
 .typeOfRent:hover, .propertyRoomBtn:hover{
   background-color: #C2C2C2;
@@ -168,13 +182,13 @@ a{
   border: none;
 }
 .btnSearch{
-  background-color: #C2C2C2;
+  background-color: #e6e6e6;
 }
 .btnSearch:hover, .btnSearch:active{
-  background-color: #C2C2C2;
+  background-color: #e6e6e6;
 }
 .btnSearch:focus{
-  background-color: #C2C2C2;
+  background-color: #e6e6e6;
   box-shadow: none;
 }
 .input-group-text{
@@ -196,6 +210,51 @@ a{
   left: 80%;
   margin-top: 4px;
 }
+.aminityContainer{
+  font-size: 12px;
+  color: #929292;
+}
+.aminityLabel{
+  width: 22%;
+}
+.btnSignOut{
+  background-color: #fff;
+  border: none;
+  color: #000000;
+}
+.dropdown-menu::before{
+  width: 10px;
+  background-color: #000000;
+  height: 10px;
+}
+.dropdown-menu{
+  margin-top: 15px !important;
+  margin-right: 100% !important;
+}
+.logoLink{
+  width: 30px;
+  margin-right: 15px;
+}
+.logoutLink{
+  width: 30px;
+  margin-left: -10px;
+  margin-right: 10px;
+}
+.imgProfile{
+  width: 75px;
+  height: 70px
+}
+.btn-outline-secondary{
+  border: none !important;
+}
+.btnSignOut:hover{
+  background-color: transparent;
+  color: #000000;
+}
+.linkDrop{
+  color: #000000;
+}
+
 @media screen and (max-width:900px) {
   .inputGroup{
     margin: 0;
