@@ -9,7 +9,6 @@ const CardItem = ({ item }) => {
     console.log(id);
     router.push(`roomList/${id}`);
   };
-  console.log(item.image);
   return (
     <div className="cardContainer">
       <Card

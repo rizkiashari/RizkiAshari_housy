@@ -67,6 +67,8 @@ const Header = () => {
     });
     setAuthToken();
   };
+
+  // console.log("saya state", state);
   return (
     <div className="fixed-1">
       <Navbar
@@ -105,6 +107,7 @@ const Header = () => {
             {state.isLogin && (
               <>
                 <DropdownButton
+                  align="end"
                   className="menu-drop"
                   title={
                     <Image
@@ -112,29 +115,30 @@ const Header = () => {
                       src={profilePic}
                     />
                   }
-                  variant="outline-secondary"
-                  id="input-group-dropdown-1"
+                  variant="btn-secondary"
+                  id="dropdown-menu-align-right"
                 >
-                  <Dropdown.Item>
+                  <div class="arrow-up"></div>
+                  <Dropdown.Item eventKey="1" align="end">
                     <Link className="linkDrop" to="/profile">
                       <Image src={userLogo} className="logoLink" alt="Logo" />
                       Profile
                     </Link>
                   </Dropdown.Item>
-                  <Dropdown.Item>
+                  <Dropdown.Item eventKey="2" align="end">
                     <Link className="linkDrop" to="/booking">
                       <Image className="logoLink" src={booking} alt="Logo" />
                       My Booking
                     </Link>
                   </Dropdown.Item>
-                  <Dropdown.Item>
+                  <Dropdown.Item eventKey="3" align="end">
                     <Link className="linkDrop" to="/history">
                       <Image className="logoLink" src={bilLogo} alt="Logo" />
                       History
                     </Link>
                   </Dropdown.Item>
                   <Dropdown.Divider />
-                  <Dropdown.Item>
+                  <Dropdown.Item eventKey="4" align="end">
                     <Button className="btn btnSignOut" onClick={handleSignout}>
                       <Image
                         className="logoutLink"

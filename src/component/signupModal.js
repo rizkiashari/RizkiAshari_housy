@@ -7,7 +7,11 @@ import { Form, Button, Modal } from "react-bootstrap";
 const SignupModal = (props) => {
   const { handleClose, showSignUp } = props;
   return (
-    <Modal show={showSignUp} onHide={handleClose} className="">
+    <Modal
+      show={showSignUp}
+      onHide={handleClose}
+      className="modal-dialog modal-dialog-centered"
+    >
       <h2 className="title-Sign mx-auto">Sign Up</h2>
       <div className="p-10 formCustom">
         <Form>

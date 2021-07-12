@@ -17,6 +17,21 @@ a{
   padding: 2px;
   outline: none;
 }
+.modal-content{
+  box-shadow: 0px 0px 20px -2px rgba(0, 0, 0, 0.404) !important;
+  border-radius: 0.8em !important;
+}
+.modal{
+  position: fixed;
+  top: 0;
+  left:0;
+  margin: 10rem 0px 0 32rem ;
+  z-index: 1060;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+}
 .font-bold{
   font-weight: bold;
 }
@@ -222,14 +237,20 @@ a{
   border: none;
   color: #000000;
 }
+.menu-drop{
+  box-shadow: none;
+}
 .dropdown-menu::before{
   width: 10px;
   background-color: #000000;
   height: 10px;
 }
 .dropdown-menu{
-  margin-top: 15px !important;
-  margin-right: 100% !important;
+  margin-top: 10px !important;
+  margin-left: -120px !important;
+}
+.btn.focus, .btn:focus{
+  box-shadow: none !important;
 }
 .logoLink{
   width: 30px;
@@ -240,20 +261,151 @@ a{
   margin-left: -10px;
   margin-right: 10px;
 }
-.imgProfile{
-  width: 75px;
-  height: 70px
+.dropdown-toggle::after{
+  display: none;
 }
-.btn-outline-secondary{
-  border: none !important;
+.arrow-up {
+  position: absolute;
+  width: 0; 
+  height: 0;
+  top: -10px;
+  right: 10px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent; 
+  border-bottom: 18px solid #e7e7e7;
+}
+.imgProfile{
+  width: 40px;
+  height: 40px;
+}
+.dropdown-item.active, .dropdown-item:active{
+  background-color: #ffffff;
+}
+.btnSignOut{
+  background: transparent !important;
 }
 .btnSignOut:hover{
-  background-color: transparent;
+  background: transparent !important;
   color: #000000;
 }
 .linkDrop{
   color: #000000;
 }
+
+/* Profile */
+.containerProfile, .containerBooking,.containerDetailProduct{
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  margin: 50px auto 0 0;
+  background-color: #F9F9F9;
+}
+.boxProfile{
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  margin: 70px auto 0 auto;
+  height: 85%;
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+}
+.personalContainer{
+  margin: 28px 0 0 28px;
+  width: 70%;
+}
+.titleProfile h3 {
+  font-size: 20px;
+}
+.containerContent{
+  display: flex;
+  margin-top: 8px;
+}
+.containerContent .image{
+  align-self: center;
+  width: 30px;
+  height: 30px;
+}
+.containerContent .logoPass{
+  width: 25px;
+  margin-left: 3px;
+}
+.containerContent .logoAdd{
+  width: 25px;
+  margin-left: 3px;
+}
+.content{
+  line-height: 10px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+.containerContent .content h3{
+  font-size: 14px;
+  font-weight: 700;
+}
+.containerContent .content p{
+  font-size: 12px;
+  color: #8A8C90;
+}
+.imageProfileContainer {
+  margin: 28px 0 0 32px;
+}
+.imageProfileContainer .profileIcon{
+  border-radius: 5px;
+}
+.btnChange{
+  width: 90%;
+  background-color: #5A57AB;
+  border: none;
+  margin-top: 13px;
+  height: 45px;
+}
+.btnChange:hover{
+  background-color: #5A57AB;
+}
+.changePassword{
+  background-color: #fff;
+  color: #0083E2;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 0 !important;
+}
+.changePassword:hover{
+  background-color: #fff;
+  color: #0083E2;
+}
+.show, .fade{
+  background: transparent !important;
+}
+
+/* Booking */
+.boxBooking{
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  margin: 70px auto 0 auto;
+  height: 50%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 12px 34px;
+}
+.headerBooking{
+
+}
+
+/* Detail Product */
+.containerContentImage{
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* .containerContentImage .house1{
+  width: 70%;
+  border-radius: 0%;
+} */
 
 @media screen and (max-width:900px) {
   .inputGroup{

@@ -32,38 +32,45 @@ const SigninModal = (props) => {
   };
 
   return (
-    <Modal show={show} onHide={handleClose} handleSignIn={handleSignIn}>
-      <h2 className="title-Sign mx-auto">Sign In</h2>
-      <div className="p-10 formCustom">
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Username</Form.Label>
-            <Form.Control
-              type="text"
-              name="username"
-              onChange={handleChange}
-              value={data.username}
-              placeholder="Enter Username"
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              name="password"
-              value={data.password}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit" className="submitBtn mb-10">
-            Sign In
-          </Button>
-        </Form>
-        <p className="customP">
-          Don't have an account? <Link to="/signup">klik Here</Link>
-        </p>
-      </div>
-    </Modal>
+    <div className="modal">
+      <Modal
+        className="modal-dialog modal-dialog-centered"
+        show={show}
+        onHide={handleClose}
+        handleSignIn={handleSignIn}
+      >
+        <h2 className="title-Sign mx-auto">Sign In</h2>
+        <div className="p-10 formCustom">
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type="text"
+                name="username"
+                onChange={handleChange}
+                value={data.username}
+                placeholder="Enter Username"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                name="password"
+                value={data.password}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" className="submitBtn mb-10">
+              Sign In
+            </Button>
+          </Form>
+          <p className="customP">
+            Don't have an account? <Link to="/">klik Here</Link>
+          </p>
+        </div>
+      </Modal>
+    </div>
   );
 };
 

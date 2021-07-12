@@ -3,8 +3,6 @@ import { Row, Col } from "react-bootstrap";
 import Sidebar from "../component/Sidebar";
 import CardList from "../component/CardList";
 
-import houseList from "../data/fakeData";
-
 const Home = () => {
   return (
     <div className="homeCustom">
@@ -13,7 +11,7 @@ const Home = () => {
           <Sidebar />
         </Col>
         <Col md={8}>
-          <CardList data={houseList} />
+          <CardList />
         </Col>
       </Row>
     </div>
