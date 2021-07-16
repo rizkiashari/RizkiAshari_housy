@@ -31,7 +31,6 @@ const Sidebar = () => {
     { name: "Furnished", value: "Furnished" },
     { name: "Shared Accomodation", value: "Shared Accomodation" },
   ];
-
   // Property BedRoom
   const [bedroom, setBedroom] = useState("3");
   const bedrooms = [

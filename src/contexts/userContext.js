@@ -5,18 +5,20 @@ export const UserContext = createContext();
 const initialState = {
   isLogin: false,
   user: null,
+  token: localStorage.getItem("token"),
 };
-
 const userReducer = (state, action) => {
   switch (action.type) {
     case "LOGIN":
+    case "AUTH_SUCCESS":
       return {
         ...state,
         isLogin: true,
         user: action.payload,
       };
-
     case "LOGOUT":
+    case "AUTH_ERROR":
+      localStorage.removeItem("token");
       return {
         ...state,
         isLogin: false,

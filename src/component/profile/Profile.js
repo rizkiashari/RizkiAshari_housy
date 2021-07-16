@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/userContext";
 import { useQuery } from "react-query";
 import { API } from "../../config/api";
@@ -12,16 +12,16 @@ import logoGender from "../../assets/Profile/gender.png";
 import logoPhone from "../../assets/Profile/phone.png";
 import logoAddress from "../../assets/Profile/addres.png";
 import ProfileIcon from "../../assets/Profile/Profile.png";
+// Modal Change Password
+import ChangePassword from "../ModalChangePassword/ChangePassword";
 const Profile = () => {
   const { state } = useContext(UserContext);
-  const { isLoading, isFetching, isFetched, isError, data, error } = useQuery(
-    "user",
-    async () => {
-      const response = await API.get(`/user/${state.user.id}`);
-      console.log("Aku Respon", response);
-      return response.data.data;
-    }
-  );
+  const [showChangePassword, setShowChangePassword] = useState(false);
+  const { isLoading, data, error } = useQuery("user", async () => {
+    const response = await API.get(`/user/${state.user.id}`);
+    //console.log("Aku Respon", response);
+    return response.data.data;
+  });
   let fullName, email, gender, status, address, phone;
   if (data != null) {
     fullName = data.fullName;
@@ -32,10 +32,8 @@ const Profile = () => {
     phone = data.phone;
   }
 
-  //if (isLoading) return <p>... loading</p>;
-  //console.log("AKu data username", state.user.username);
-  //console.log("AKu State Pro", state.user.username);
-  console.log("DATA", data);
+  if (isLoading) return <p>... loading</p>;
+
   return (
     <div className="containerProfile">
       <div className="boxProfile">
@@ -63,12 +61,16 @@ const Profile = () => {
               <Button
                 className="changePassword"
                 data-toggle="modal"
-                // onClick={}
+                onClick={() => setShowChangePassword(true)}
               >
                 Change Password
               </Button>
               <p>Password</p>
             </div>
+            <ChangePassword
+              showChangePassword={showChangePassword}
+              handleClose={() => setShowChangePassword(false)}
+            />
           </div>
           <div className="containerContent">
             <Image src={logoStatus} alt="image" className="image" />

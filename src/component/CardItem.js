@@ -27,14 +27,14 @@ const CardItem = ({ item }) => {
         />
         <Card.Body>
           <Card.Title className="customTitle">
-            Rp.{item.price.toString()}/{item.rent}
+            Rp.{item.price.toLocaleString("id-ID")}/{item.rent}
           </Card.Title>
           <Card.Title>
             <span className="fontCustom">
-              {item.bedroom} Beds, {item.bathroom} Baths, {item.area} sqft
+              {item.bedRoom} Beds, {item.bathroom} Baths, {item.area} sqft
             </span>
           </Card.Title>
-          <Card.Text className="lokasiCustom">{item.location}</Card.Text>
+          <Card.Text className="lokasiCustom">{item.city.name}</Card.Text>
         </Card.Body>
       </Card>
     </div>

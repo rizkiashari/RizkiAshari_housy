@@ -1,5 +1,7 @@
 import { Link, useHistory } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
+import { UserContext } from "../../contexts/userContext";
+
 import Logo from "../../assets/logoIcon/Icon.png";
 import searchLogo from "../../assets/logoIcon/search-icon.png";
 import LogoLogout from "../../assets/logoIcon/logoLogout.png";
@@ -9,7 +11,6 @@ import booking from "../../assets/logoIcon/booking.png";
 
 import ModalSignIn from "../signinModal";
 import ModalSignUp from "../signupModal";
-import { UserContext } from "../../contexts/userContext";
 import data from "../../data/fakeData";
 
 import {
@@ -31,9 +32,7 @@ const Header = () => {
   const [showSignUp, setShowSignUp] = useState(false);
 
   const router = useHistory();
-  // console.log("akuu state", state);
-  // console.log("akuu state data", state.user);
-  // console.log("akuu dispatch", dispatch);
+
   let profilePic = "";
   if (state.isLogin === true) {
     profilePic = state.user.profileImage;
@@ -73,7 +72,7 @@ const Header = () => {
     <div className="fixed-1">
       <Navbar
         expand="lg"
-        className="mx-4 fixed-top bg-white"
+        className="fixed-top bg-white"
         style={{ width: "100%" }}
       >
         <Link to="/">
@@ -112,7 +111,7 @@ const Header = () => {
                   title={
                     <Image
                       className="rounded-circle imgProfile"
-                      src={profilePic}
+                      src={profilePic ? profilePic : userLogo}
                     />
                   }
                   variant="btn-secondary"
@@ -162,6 +161,7 @@ const Header = () => {
                 </Button>
                 <Button
                   className="btn btn-light fw-bold"
+                  data-toggle="modal"
                   onClick={() => setShowSignUp(true)}
                 >
                   Sign Up
