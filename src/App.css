@@ -145,13 +145,11 @@ a{
 }
 .cardContainer{
   width: 100%;
-  
 }
 .CardCustom{
   cursor: pointer;
   margin-left: 5px;
   width: 100%;
-  
 }
 .amenities{
   position: absolute;
@@ -276,7 +274,7 @@ a{
 .dropdown-toggle::after{
   display: none;
 }
-.arrow-up {
+.arrow-up{
   position: absolute;
   width: 0; 
   height: 0;
@@ -303,11 +301,11 @@ a{
 .linkDrop{
   color: #000000;
 }
-
 /* Profile */
-.containerProfile, .containerBooking{
+.containerProfile{
   width: 100%;
   height: 90vh;
+  overflow: hidden;
   position: relative;
   margin: 50px auto 0 0;
   background-color: #F9F9F9;
@@ -364,16 +362,25 @@ a{
 }
 .imageProfileContainer .profileIcon{
   border-radius: 5px;
+  height: 400px;
+  width: 320px;
+  padding: 10px 5px;
+  object-fit: cover;
 }
-.btnChange{
-  width: 90%;
+.btnChange {
   background-color: #5A57AB;
-  border: none;
-  margin-top: 13px;
-  height: 45px;
+  margin-top: 5px;
+  width: 90%;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px 0;
+  color: #FFFFFF;
+  text-align: center;
 }
 .btnChange:hover{
-  background-color: #5A57AB;
+  background-color: #5a57ab;
 }
 .changePassword{
   background-color: #fff;
@@ -387,19 +394,17 @@ a{
   background-color: #fff;
   color: #0083E2;
 }
-.show, .fade{
-  background: transparent !important;
-}
 
 /* Booking */
 .boxBooking{
-  position: absolute;
+  /* position: absolute; */
   width: 50%;
-  left: 25%;
+  left: 25%; 
   border: 1px solid #b7b7b798;
-  margin: 70px auto 0 auto;
-  height: 70%;
-  background-color: #fff;
+  margin-top: 40px;
+  margin-left: 25rem;
+  height: 58vh;
+  background-color: #ffffff;
   border-radius: 8px;
   padding: 12px 34px;
 }
@@ -507,17 +512,58 @@ a{
 .uploadPayment img{
   border-radius: 5px;
 }
-.uploadPayment button{
-  background-color: #fff;
-  margin-left: 5px;
-  height: 25px;
-  padding: 5px ;
-  border: none;
-  /* height: 0px; */
-  margin-top: 1px;
-  text-align: center;
+.uploadPayment p{
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 17px;
 }
-
+.uploadPayment input[type="file"] {
+  display: none;
+}
+.uploadPayment .custom-file-upload{
+  background-color: #fff;
+  height: 25px;
+  text-align: center;
+  padding: 5px 4px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+}
+.data-user table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #A8A8A8;
+  font-size: 14px;
+}
+.total{
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+.total .title{
+  margin-right: 17px;
+}
+.total .price{
+  margin-right: 40px;
+  color: #f70c0c;
+}
+.btn-booking{
+  width: 15%;
+  background-color: #5A57AB !important;
+  margin-top: 15px;
+  margin-left: 54.5rem;
+}
+.containerBooking{
+  width: 100%;
+  position: relative;
+  padding: 20px 0;
+  margin: 50px auto 0 0;
+  background-color: #F9F9F9;
+}
 /* Detail Product */
 .containerDetailProduct{
   width: 100%;
@@ -611,6 +657,269 @@ a{
   background-color: #5A57AB;
   width: 200px;
 }
+
+/* History */
+.Approve{
+  background-image: linear-gradient(to right top, #bcf3b4, #bcf3b4, #bcf3b4, #bcf3b4, #bcf3b4);
+  width: 60px;
+  margin-left: 5px;
+  color:#0bdc5f;
+  padding: 5px 10px;
+}
+
+/* Add Property */
+.containerProperty{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #F9F9F9;
+}
+.title h3{
+  margin-top: 90px;
+  margin-left: 50px;
+  font-size: 20px;
+  margin-bottom: -10px;
+  position: absolute;
+}
+.containerContentProperty{
+  position: absolute;
+  margin-top: 140px;
+  width: 80%;
+  margin-left: 90px;
+}
+.Property h3{
+  font-size: 14px;
+  margin: 12px 0px 12px 10px;
+}
+.Property input, .textarea{
+  background-color: rgba(196, 196, 196, 0.5);
+  border: 2px solid rgba(129, 128, 128, 0.5);
+  margin-bottom: 10px;
+}
+
+/* Owner */
+.navbar-owner{
+  background-color: #0000;
+  width: 100%;
+}
+.containerOwner{
+  width: 100%;
+  position: absolute;
+  height: 100vh;
+  margin: 50px auto 0 0;
+  background-color: #F9F9F9;
+}
+.containerOwner .title{
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 60px;
+  margin-left: 50px;
+}
+.contentTable{
+  width: 90%;
+  margin-left: 4rem;
+}
+.contentTable td, th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #000000;
+  font-size: 14px;
+}
+.btnTransparent{
+  background-color: transparent;
+  border: none;
+}
+.btnTransparent:hover{
+  background-color: transparent;
+}
+.btnTransparent:focus, .btnTransparent.active{
+  background-color: transparent;
+}
+.bgbrown{
+  background-color: rgba(196, 196, 196, 0.5);
+  color: #000000;
+  border: 2px solid rgba(129, 128, 128, 0.5);
+}
+.checkboxAmenities{
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.labelAmenities{
+  margin-right: 60px;
+  align-self: center;
+}
+.btnSave{
+  width: 300px;
+  margin:50px 30rem 30px 30rem;
+  background-color: #5A57AB;
+}
+.modal-header{
+  border: none !important;
+}
+.close{
+  color: #FF0742;
+}
+.modalCustom{
+  width: 100% !important;
+}
+/* Detail Invo */
+.headerInvo{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.headerInvo img{
+  width: 80px;
+  height: 40px;
+  margin-top: 10px;
+}
+.contentInvo h3{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 1px;
+}
+.contentInvo .day{
+  color: #878787;
+  font-weight: 800;
+  font-size: 14px;
+}
+.contentInvo .tgl{
+  color: #878787;
+  font-weight: 400;
+  font-size: 14px;
+}
+.containerDetailInvo{
+  display: flex;
+  margin-top: 15px;
+  padding: 0 10px;
+}
+.InvoHouse h3{
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+.InvoHouse p{
+  font-size: 10px;
+}
+.invoWaiting{
+  width: 90px;
+  margin-top: -6px;
+  margin-left: 5px;
+  padding: 2px 3px;
+  color: #ee8989;
+  background-image: linear-gradient(to right, #f6dfdf, #f7dede, #f7dddd, #f8dcdc, #f8dbdb);
+}
+.invoBooking{
+  display: flex;
+}
+.bulat{
+  display:flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 20px;
+}
+.bulat1Invo{
+  width: 10px;
+	height: 10px;
+  margin-bottom: 4px;
+	border-radius: 100%;
+  border: #5A57AB solid 2px;
+}
+.garisInvo{
+  width: 2px;
+  height: 50px;
+  margin-left: 4px;
+  background-color: #D0D0D0;
+}
+.bulat2Invo{
+  width: 10px;
+	height: 10px;
+  background: #5A57AB;
+	border-radius: 100%;
+  margin-top: 4px;
+}
+.infoInvo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 12px;
+}
+.infoInvo .checkIn h3,.infoInvo .checkOut h3{
+  width: 80px;
+  font-size: 14px;
+}
+.infoInvo .checkIn p,.infoInvo .checkOut p,.infoInvo .Amenities p, .typeRent p{
+  width: 80px;
+  font-size: 12px;
+  color: #959595;
+}
+.houseInvo{
+  margin-right: 5px;
+}
+.Amenities h3, .typeRent h3{
+  font-size: 14px;
+}
+.uploadInvo p{
+  font-size: 10px;
+  text-align: center;
+  color: #818181;
+}
+.uploadInvo img{
+  border-radius: 5px;
+  width: 100px;
+}
+.uploadInvo label{
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 8px;
+}
+.uploadInvo input[type="file"] {
+  display: none;
+}
+.uploadInvo .custom-file-upload{
+  background-color: #fff;
+  height: 25px;
+  text-align: center;
+  padding: 5px 4px;
+  font-size: 9px;
+  border: none;
+  cursor: pointer;
+}
+.data-user-invo table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.data-user-invo th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #A8A8A8;
+  font-size: 12px;
+}
+.data-user-invo .total{
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+.data-user-invo .total .title{
+  margin-right: 17px;
+  font-size: 13px;
+}
+.data-user-invo .total .price{
+  margin-right: 40px;
+  color: #f70c0c;
+  font-size: 13px;
+}
+.space{
+  padding: 10px 15px;
+  margin-left: 17rem;
+}
+.ameniy{
+  display: inline;
+  flex-direction: column;
+}
+
 @media screen and (max-width:900px) {
   .inputGroup{
     margin: 0;

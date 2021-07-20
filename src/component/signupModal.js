@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Button, Modal } from "react-bootstrap";
-import { API } from "../config/api";
+import { API, setAuthToken } from "../config/api";
+import { UserContext } from "../contexts/userContext";
 
 const SignupModal = (props) => {
-  const { handleClose, showSignUp } = props;
+  const { handleClose, showSignUp, handleSignUp } = props;
+  const { state } = useContext(UserContext);
   const [error, setError] = useState("");
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState({
@@ -23,7 +25,7 @@ const SignupModal = (props) => {
       [e.target.name]: e.target.value,
     });
   };
-  console.log("Aku Data Sign: ", data);
+  //console.log("Aku Data Sign: ", data);
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -32,13 +34,14 @@ const SignupModal = (props) => {
         "Content-Type": "application/json",
       };
       const response = await API.post("/signup", data, config);
-      console.log("Aku Respon: ", response);
+      setAuthToken(response.data.data.token);
       localStorage.setItem("token", response.data.token);
-      // localStorage.setItem("Response", response);
-      return response.data.data;
+      handleSignUp({
+        type: "REGISTER",
+        payload: response.data.data,
+      });
+      handleClose(true);
     } catch (err) {
-      // console.log("Aku error sign up", err.response.data);
-      // console.log("aku error", err.response.data.message);
       setIsError(true);
       setError(err.response.data.message);
       setTimeout(() => {
@@ -48,7 +51,12 @@ const SignupModal = (props) => {
     }
   };
   return (
-    <Modal show={showSignUp} onHide={handleClose} className="signUpStyle">
+    <Modal
+      show={showSignUp}
+      onHide={handleClose}
+      handleSignUp={handleSignup}
+      className="signUpStyle"
+    >
       <h2 className="title-Sign mx-auto">Sign Up</h2>
 
       <div className="p-10 formCustom">
@@ -104,7 +112,7 @@ const SignupModal = (props) => {
               name="listAsId"
               onChange={handleChange}
             >
-              <option value="">Choose List As</option>
+              <option value="">-</option>
               <option value="1">Owner</option>
               <option value="2">Tenant</option>
             </select>
@@ -116,7 +124,7 @@ const SignupModal = (props) => {
               name="gender"
               onChange={handleChange}
             >
-              <option value="">Choose Gender</option>
+              <option value="">-</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>

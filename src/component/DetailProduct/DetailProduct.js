@@ -22,6 +22,7 @@ const DetailProduct = () => {
     setData(response.data.data);
     setLoading(false);
   };
+
   useEffect(() => {
     getProduct();
     return () => {
@@ -113,6 +114,7 @@ const DetailProduct = () => {
             <ModalOrder
               showOrder={showOrder}
               handleClose={() => setShowOrder(false)}
+              price={data.price}
             />
           </>
         )}

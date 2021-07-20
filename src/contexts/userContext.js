@@ -16,6 +16,19 @@ const userReducer = (state, action) => {
         isLogin: true,
         user: action.payload,
       };
+    case "REGISTER":
+      return {
+        ...state,
+        isLogin: false,
+        user: action.payload,
+      };
+    case "CHGPASS":
+    case "AUTH_CHANGE":
+      return {
+        ...state,
+        isLogin: true,
+        user: action.payload,
+      };
     case "LOGOUT":
     case "AUTH_ERROR":
       localStorage.removeItem("token");

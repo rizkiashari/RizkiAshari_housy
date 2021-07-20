@@ -7,24 +7,27 @@ import DetailProduct from "./component/DetailProduct/DetailProduct";
 import Header from "./component/Navbar/Header";
 import PrivateRoute from "./component/route/PrivateRoute";
 import Profile from "./component/profile/Profile";
+import AddProperty from "./component/AddProperty/AddProperty";
+import OwnerHome from "./pages/OwnerHome";
 import Booking from "./component/Booking/Booking";
 import History from "./component/History/History";
 import { API, setAuthToken } from "./config/api";
+
 if (localStorage.getItem("token")) {
   setAuthToken(localStorage.getItem("token"));
 }
 const App = () => {
-  const { dispatch } = useContext(UserContext);
+  const { state, dispatch } = useContext(UserContext);
   const checkUser = async () => {
     try {
       const response = await API.get("/check-auth");
-      if (!response.status !== 200) {
+      if (response.status !== 200) {
         return dispatch({ type: "AUTH_ERROR" });
       }
       let payload = response.data.data;
       payload.token = localStorage.getItem("token");
       dispatch({
-        type: "AUTH_SUCCESS",
+        type: "AUTH_SUCCESS" || "AUTH_CHANGE",
         payload,
       });
     } catch (error) {
@@ -43,10 +46,12 @@ const App = () => {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/owner-page" component={OwnerHome} />
           <Route exact path="/roomList/:id" component={DetailProduct} />
           <PrivateRoute exact path="/profile" component={Profile} />
-          <Route exact path="/booking" component={Booking} />
-          <Route exact path="/history" component={History} />
+          <PrivateRoute exact path="/booking" component={Booking} />
+          <PrivateRoute exact path="/history" component={History} />
+          <Route exact path="/add-property" component={AddProperty} />
         </Switch>
       </QueryClientProvider>
     </Router>

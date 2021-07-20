@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
 const CardItem = ({ item }) => {
+
   const router = useHistory();
 
   const handlePushToDetail = (id) => {

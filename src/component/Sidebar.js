@@ -13,10 +13,14 @@ import {
   Container,
   ToggleButton,
 } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { FilterContext } from "../contexts/FilterContext";
 
 const Sidebar = () => {
   const [checked, setChecked] = useState(false);
+
+  const { filterState, filterDispatch } = useContext(FilterContext);
+
   const [startDate, setStartDate] = useState();
   // Type Of Rent
   const [type, setTypeOfRent] = useState("year");
@@ -31,6 +35,7 @@ const Sidebar = () => {
     { name: "Furnished", value: "Furnished" },
     { name: "Shared Accomodation", value: "Shared Accomodation" },
   ];
+
   // Property BedRoom
   const [bedroom, setBedroom] = useState("3");
   const bedrooms = [

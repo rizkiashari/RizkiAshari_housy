@@ -1,13 +1,16 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { Form, Button, Modal } from "react-bootstrap";
 
 import { API, setAuthToken } from "../config/api";
 
 import ModalSignUp from "../component/signupModal";
+import { UserContext } from "../contexts/userContext";
 
 const SigninModal = (props) => {
+  const router = useHistory();
   const { handleClose, show, handleSignIn, load } = props;
+  const { dispatch } = useContext(UserContext);
   const [showSignUp, setShowSignUp] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -31,7 +34,6 @@ const SigninModal = (props) => {
         "Content-Type": "application/json",
       };
       const response = await API.post("/signin", data, config);
-      console.log(response);
       setAuthToken(response.data.data.token);
       localStorage.setItem("token", response.data.data.token);
       setIsLoading(false);
@@ -39,6 +41,11 @@ const SigninModal = (props) => {
         type: "LOGIN",
         payload: response.data.data,
       });
+      if (response.data.data.listAs === "Owner") {
+        router.push("/owner-page");
+      } else {
+        router.push("/");
+      }
     } catch (err) {
       console.log("aku error", err.response.data.message);
       console.log("Aku error sign in", err.response.data);
@@ -105,6 +112,7 @@ const SigninModal = (props) => {
       <ModalSignUp
         showSignUp={showSignUp}
         handleClose={() => setShowSignUp(false)}
+        handleSignUp={dispatch}
       />
     </div>
   );
